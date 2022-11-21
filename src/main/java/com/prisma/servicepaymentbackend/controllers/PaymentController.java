@@ -9,17 +9,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = {"integration"})
+@RequestMapping(value = {"/integration"})
 public class PaymentController {
-    @RequestMapping(value = "submit-trx", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(value = "/submit-trx", method = RequestMethod.POST, produces = "application/json")
     public Map submittrx(@RequestBody Map bodyRequest) {
         String amount = (String) bodyRequest.get("amount");
         String transaction_date = (String) bodyRequest.get("transaction_date");
         String payment_method = (String) bodyRequest.get("payment_method");
         String merchant_name = (String) bodyRequest.get("merchant_name");
         Map response = new HashMap();
-        response.put("status","= success");
-        response.put("message","= pembayaran sedang diproses");
+        response.put("status", "success");
+        response.put("message", "pembayaran sedang diproses");
         return response;
     }
 }
