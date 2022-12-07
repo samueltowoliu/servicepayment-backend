@@ -4,16 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.math.BigDecimal;
 import java.time.DateTimeException;
+import java.util.Date;
 
 @Entity
 public class TbTransactions {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
-    private DateTimeException created_dt;
-    private DateTimeException transaction_date;
-    private Double checkout_amount;
+    private Date created_dt;
+    private Date transaction_date;
+    private BigDecimal checkout_amount;
     private String merchant_name;
     private String payment_method;
 
@@ -25,27 +27,27 @@ public class TbTransactions {
         this.id = id;
     }
 
-    public DateTimeException getCreated_dt() {
+    public Date getCreated_dt() {
         return created_dt;
     }
 
-    public void setCreated_dt(DateTimeException created_dt) {
+    public void setCreated_dt(Date created_dt) {
         this.created_dt = created_dt;
     }
 
-    public DateTimeException getTransaction_date() {
+    public Date getTransaction_date() {
         return transaction_date;
     }
 
-    public void setTransaction_date(DateTimeException transaction_date) {
+    public void setTransaction_date(Date transaction_date) {
         this.transaction_date = transaction_date;
     }
 
-    public Double getCheckout_amount() {
+    public BigDecimal getCheckout_amount() {
         return checkout_amount;
     }
 
-    public void setCheckout_amount(Double checkout_amount) {
+    public void setCheckout_amount(BigDecimal checkout_amount) {
         this.checkout_amount = checkout_amount;
     }
 
