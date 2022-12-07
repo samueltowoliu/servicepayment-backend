@@ -11,4 +11,11 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = {"/bank"})
 public class BankController {
+    @RequestMapping(value = "/generate-qr", method = RequestMethod.POST, produces = "application/json")
+    public Map generateQr(@RequestBody Map bodyRequest) {
+        Map response = new HashMap();
+        String dataQR = "ini adalah data qr yang nantinya akan di convert menjadi gambar qr oleh website atau aplikasi";
+        response.put("dataQR", dataQR);
+        return response;
+    }
 }
